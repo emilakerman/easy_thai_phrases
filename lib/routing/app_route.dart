@@ -1,5 +1,5 @@
 enum AppRoute {
-  home,
+  root,
   list,
   categories,
   favorites,
