@@ -1,5 +1,6 @@
 import 'package:easy_thai_phrases/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class TopWrapper extends StatelessWidget {
   final Widget? body;
@@ -8,26 +9,26 @@ class TopWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          // Needs to be true to make sure title is centered on Android.
-          centerTitle: true,
-          title: const Text("Learn Thai Phrases"),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
+    return Scaffold(
+      appBar: AppBar(
+        // Needs to be true to make sure title is centered on Android.
+        centerTitle: true,
+        title: const Text("Learn Thai Phrases"),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => {
+            // context.pop(),
+          },
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.person),
             onPressed: () => {},
           ),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.person),
-              onPressed: () => {},
-            ),
-          ],
-        ),
-        body: body,
-        bottomNavigationBar: BottomNavBar(),
+        ],
       ),
+      body: body,
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }
