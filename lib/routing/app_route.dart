@@ -3,4 +3,5 @@ enum AppRoute {
   list,
   categories,
   favorites,
+  categoryPhrases,
 }

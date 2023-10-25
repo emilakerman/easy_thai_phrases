@@ -1,4 +1,7 @@
+import 'package:easy_thai_phrases/constants/phrases.dart';
+import 'package:easy_thai_phrases/domain/phrase.dart';
 import 'package:easy_thai_phrases/pages/categories_screen.dart';
+import 'package:easy_thai_phrases/pages/category_phrases_screen.dart';
 import 'package:easy_thai_phrases/pages/favorites_screen.dart';
 import 'package:easy_thai_phrases/pages/phrase_list.dart';
 import 'package:easy_thai_phrases/pages/welcome_screen.dart';
@@ -21,6 +24,13 @@ final GoRouter router = GoRouter(
           path: 'categories',
           name: AppRoute.categories.name,
           builder: (context, state) => CategoriesScreen(),
+          routes: [
+            GoRoute(
+              path: 'categoryPhrases',
+              name: AppRoute.categoryPhrases.name,
+              builder: (context, state) => CategoryPhraseScreen(phrase: state.extra as String),
+            ),
+          ],
         ),
         GoRoute(
           path: 'favorites',
