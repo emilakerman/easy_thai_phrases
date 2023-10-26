@@ -51,30 +51,26 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
-          backgroundColor: Colors.blue,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.view_list_sharp),
-          label: 'Phrase List',
-          backgroundColor: Colors.green,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.category),
-          label: 'Categories',
-          backgroundColor: Colors.purple,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.favorite),
-          label: 'Favorites',
-          backgroundColor: Colors.pink,
-        ),
+      items: <BottomNavigationBarItem>[
+        _buildBottomNavItem(icon: Icons.home, label: "Home"),
+        _buildBottomNavItem(icon: Icons.view_list_sharp, label: "Phrase List"),
+        _buildBottomNavItem(icon: Icons.category, label: "Categories"),
+        _buildBottomNavItem(icon: Icons.heart_broken, label: "Favorites"),
       ],
       currentIndex: _selectedIndex,
       onTap: (int value) => (_onItemTapped(context: context, index: value)),
+    );
+  }
+
+  BottomNavigationBarItem _buildBottomNavItem({
+    required IconData icon,
+    required String label,
+    Color? color,
+  }) {
+    return BottomNavigationBarItem(
+      icon: Icon(icon),
+      label: label,
+      backgroundColor: color ?? Color.fromARGB(255, 125, 83, 83),
     );
   }
 }
