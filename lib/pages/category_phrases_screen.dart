@@ -3,15 +3,20 @@ import 'package:easy_thai_phrases/domain/phrase.dart';
 import 'package:easy_thai_phrases/top_wrapper.dart';
 import 'package:flutter/material.dart';
 
-class CategoryPhraseScreen extends StatelessWidget {
-  CategoryPhraseScreen({super.key, required this.phrase});
+class CategoryPhraseScreen extends StatefulWidget {
+  const CategoryPhraseScreen({super.key, required this.phrase});
   final String phrase;
 
+  @override
+  State<CategoryPhraseScreen> createState() => _CategoryPhraseScreenState();
+}
+
+class _CategoryPhraseScreenState extends State<CategoryPhraseScreen> {
   List<Phrase> phrases = [];
 
   //TODO(Any): Make one for each category, but in a shorter/better way
   void changeList() {
-    if (phrase.toLowerCase() == 'dating') {
+    if (widget.phrase.toLowerCase() == 'dating') {
       phrases = dating;
     }
   }

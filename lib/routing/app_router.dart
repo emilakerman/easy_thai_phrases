@@ -28,19 +28,21 @@ final GoRouter router = GoRouter(
             GoRoute(
               path: 'categoryPhrases',
               name: AppRoute.categoryPhrases.name,
-              builder: (context, state) => CategoryPhraseScreen(phrase: state.extra as String),
+              builder: (BuildContext context, GoRouterState state) => CategoryPhraseScreen(
+                phrase: state.extra as String,
+              ),
             ),
           ],
         ),
         GoRoute(
           path: 'favorites',
           name: AppRoute.favorites.name,
-          builder: (context, state) => FavoritesScreen(),
+          builder: (BuildContext context, GoRouterState state) => FavoritesScreen(),
         ),
         GoRoute(
           path: 'phrases',
           name: AppRoute.list.name,
-          builder: (context, state) => PhraseList(),
+          builder: (BuildContext context, GoRouterState state) => PhraseList(),
         ),
       ],
     ),
