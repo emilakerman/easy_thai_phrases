@@ -1,6 +1,5 @@
 import 'package:easy_thai_phrases/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class TopWrapper extends StatelessWidget {
   final Widget? body;
@@ -14,12 +13,7 @@ class TopWrapper extends StatelessWidget {
         // Needs to be true to make sure title is centered on Android.
         centerTitle: true,
         title: const Text("Learn Thai Phrases"),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => {
-            // context.pop(),
-          },
-        ),
+        leading: const BackButton(),
         actions: [
           IconButton(
             icon: const Icon(Icons.person),
