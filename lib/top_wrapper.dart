@@ -10,8 +10,9 @@ class TopWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff041d21),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 125, 83, 83),
+        backgroundColor: Color(0xff072428),
         // Needs to be true to make sure title is centered on Android.
         centerTitle: true,
         //TODO(Any): Change below text depending on current screen. Pass string argument.

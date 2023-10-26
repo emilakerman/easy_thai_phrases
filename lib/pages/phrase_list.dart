@@ -11,14 +11,22 @@ class PhraseList extends StatelessWidget {
       body: ListView.builder(
         itemCount: phrases.length,
         itemBuilder: (BuildContext context, int index) => ExpansionTile(
-          title: Text(phrases[index].english),
+          collapsedIconColor: Colors.white,
+          title: Text(
+            phrases[index].english,
+            style: TextStyle(color: Colors.white),
+          ),
           children: [
             ListTile(
               leading: Text(
                 phrases[index].thai,
+                style: TextStyle(color: Colors.white),
               ),
               trailing: IconButton(
-                icon: const Icon(Icons.record_voice_over),
+                icon: const Icon(
+                  Icons.record_voice_over,
+                  color: Colors.white,
+                ),
                 onPressed: () => {},
               ),
             ),

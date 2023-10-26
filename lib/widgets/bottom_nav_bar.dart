@@ -70,7 +70,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return BottomNavigationBarItem(
       icon: Icon(icon),
       label: label,
-      backgroundColor: color ?? Color.fromARGB(255, 125, 83, 83),
+      backgroundColor: color ?? Color(0xff072428),
     );
   }
 }
