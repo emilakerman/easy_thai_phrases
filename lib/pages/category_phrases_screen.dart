@@ -16,14 +16,30 @@ class _CategoryPhraseScreenState extends State<CategoryPhraseScreen> {
 
   //TODO(Any): Make one for each category, but in a shorter/better way
   void changeList() {
-    if (widget.phrase.toLowerCase() == 'dating') {
+    var list = widget.phrase.toLowerCase();
+    if (list == 'dating') {
       phrases = dating;
+    } else if (list == 'food') {
+      phrases = food;
+    } else if (list == 'driving') {
+      phrases = driving;
+    } else if (list == 'taxi') {
+      phrases = taxi;
+    } else if (list == 'shopping') {
+      phrases = shopping;
+    } else if (list == 'drinking') {
+      phrases = drinking;
     }
   }
 
   @override
-  Widget build(BuildContext context) {
+  void initState() {
     changeList();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return TopWrapper(
       body: ListView.builder(
         itemCount: phrases.length,
